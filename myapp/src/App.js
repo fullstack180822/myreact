@@ -8,10 +8,8 @@ function App() {
       <header className="App-header">
           <h1>My App</h1>
           <Car brand="Honda" model="Civic" color="black"/>
-          {/*Ferrari , Testa Rossa, red */}
-          <Car />
-          {/*Chevrolet , cavalier, green */}
-          <Car />
+          <Car brand="Ferrari" model="Testa Rossa" color="red"/>
+          <Car brand="Chevrolet" model="cavalier" color="green"/>
       </header>
     </div>
   );
