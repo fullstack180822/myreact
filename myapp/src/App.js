@@ -7,6 +7,10 @@ function App() {
     <div>
       <header className="App-header">
           <h1>My App</h1>
+          <Car brand="Honda" model="Civic" color="black"/>
+          {/*Ferrari , Testa Rossa, red */}
+          <Car />
+          {/*Chevrolet , cavalier, green */}
           <Car />
       </header>
     </div>
