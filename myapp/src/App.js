@@ -19,6 +19,9 @@ class App extends Component {
         my_cars: new_cars
       })
   }
+  addCar = car => {
+    
+  }
   render() {
     return (
       <div>
