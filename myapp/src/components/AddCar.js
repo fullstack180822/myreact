@@ -44,6 +44,8 @@ class AddCar extends Component {
                 <option value="red" style={{color: "red"}}>Red</option>
                 <option value="orange" style={{color: "orange"}}>Orange</option>
                 <option value="pink" style={{color: "pink"}}>Pink</option>
+                <option value="black" style={{color: "black"}}>Black</option>
+                <option value="blue" style={{color: "blue"}}>Blue</option>
               </select>
               </p>  
          <button type="submit">Buy New Car</button>
