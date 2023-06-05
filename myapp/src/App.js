@@ -17,11 +17,11 @@ class App extends Component {
       <div>
         <header className="App-header">
             <h1>My App</h1>
+            {/* <Garage /> */}
+            {/* this will be in the garage: */}
             {
-              this.state.my_cars.map
-              (_car => <Car brand={_car.brand} 
-                model={_car.model} color={_car.color}
-                id={_car.id} key={_car.id}/>)
+              this.state.my_cars.map(_car => 
+                <Car brand={_car.brand} model={_car.model} color={_car.color} id={_car.id} key={_car.id}/>)
             }
         </header>
       </div>
