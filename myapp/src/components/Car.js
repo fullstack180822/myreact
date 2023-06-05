@@ -6,9 +6,9 @@ class Car extends Component {
         //const brand = this.props.brand
         //const color = this.props.color
         //const model = this.props.model        
-        const { brand, color, model  } = this.props
+        const { id, brand, color, model  } = this.props
         return (
-        <div>
+        <div key={id}>
             <p>Brand: {brand}</p>
             <p>Model: {model}</p>
             <p>Color: {color}</p>
