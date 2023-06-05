@@ -1,8 +1,12 @@
 
+import './App.css';
+
 function App() {
   return (
-    <div>
-        <h1>--Start Your App--</h1>
+    <div className="App">
+      <header className="App-header">
+          <h1>--Start Your App--</h1>
+      </header>
     </div>
   );
 }
