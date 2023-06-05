@@ -8,7 +8,8 @@ class Garage extends Component {
       <div>
             {
               this.props.cars.map(_car => 
-                <Car brand={_car.brand} model={_car.model} color={_car.color} id={_car.id} key={_car.id}/>)
+                <Car brand={_car.brand} model={_car.model} color={_car.color} id={_car.id} key={_car.id}
+                     delete_car = {this.props.delete_car}/>)
             }
       </div>
     );

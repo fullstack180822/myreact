@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Car extends Component {
+    deleteCar() {
+
+    }
     render() {
         console.log(this.props);
         //const brand = this.props.brand
@@ -11,7 +14,8 @@ class Car extends Component {
         <div key={id}>
             <p>Brand: {brand}</p>
             <p>Model: {model}</p>
-            <p>Color: {color}</p>
+            <p style={{color}}>Color: {color}</p>
+            <button style={{color: 'red'}} onClick={ () => this.props.delete_car(id) }>X</button>
             <hr />
         </div>
         )
