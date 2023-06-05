@@ -5,3 +5,7 @@
     font-size: calc(4px + 2vmin);
     color: white;
   }
+
+  .App {
+    text-align: center;
+  }

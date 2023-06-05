@@ -7,6 +7,7 @@ class AddCar extends Component {
     car_from_input: {
       brand: "",
       model: "",
+      year: "",
       color: "green"
     }
   }
@@ -25,8 +26,21 @@ class AddCar extends Component {
     e.preventDefault();
     console.log('form submitted', JSON.stringify(this.state.car_from_input));
 
-    // TODO: call add car
-    // after adding car, clear the input types
+    this.props.add_car(this.state.car_from_input)
+    this.setState({
+    car_from_input : {
+      brand: "",
+      model: "",
+      year: "",
+      color: "green"
+    }})
+
+    this.setState({
+      car_from_input: {
+        ...this.state.car_from_input,
+        [e.target.name]: ""
+      }
+    })
   }
   render() {
     return (
@@ -48,6 +62,8 @@ class AddCar extends Component {
                 <option value="blue" style={{color: "blue"}}>Blue</option>
               </select>
               </p>  
+           <p>Year: <input name="year" type="number" onChange={this.handleChange} 
+              value={this.state.car_from_input.year} placeholder="year" required/></p>              
          <button type="submit">Buy New Car</button>
         </form>
       </div>
