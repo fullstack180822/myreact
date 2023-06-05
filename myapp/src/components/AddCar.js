@@ -26,6 +26,7 @@ class AddCar extends Component {
     console.log('form submitted', JSON.stringify(this.state.car_from_input));
 
     // TODO: call add car
+    // after adding car, clear the input types
   }
   render() {
     return (
