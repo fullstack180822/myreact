@@ -1,6 +1,6 @@
 
 import "./App.css";
-import Car from './components/Car'
+import Garage from "./components/Garage";
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -17,12 +17,7 @@ class App extends Component {
       <div>
         <header className="App-header">
             <h1>My App</h1>
-            {/* <Garage /> */}
-            {/* this will be in the garage: */}
-            {
-              this.state.my_cars.map(_car => 
-                <Car brand={_car.brand} model={_car.model} color={_car.color} id={_car.id} key={_car.id}/>)
-            }
+            <Garage cars={this.state.my_cars}/> 
         </header>
       </div>
     );
