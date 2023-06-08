@@ -1,9 +1,41 @@
 import React, { Component } from 'react';
 
 class Car extends Component {
+
+    state = {
+        x : 10
+    }
     deleteCar() {
 
     }
+
+    constructor() {
+        super()
+        console.log('car ctor')
+      }
+
+    componentDidMount() {
+        console.log('new car component mount')
+        // fire ajax
+      }
+
+      componentWillUnmount() {
+
+        console.log('car component has been unmount')
+      }
+
+      componentDidUpdate(prevProps, prevState) {
+        console.log('======== -----------')
+        console.log(this.state.x)
+        console.log('car componentDidUpdate')
+        console.log(prevState)
+        console.log(prevProps)
+        // will create a loop error!
+        // this.setState({x : this.state.x+1})
+      }
+    
+
+      
     render() {
         console.log(this.props);
         //const brand = this.props.brand

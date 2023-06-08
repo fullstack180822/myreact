@@ -3,6 +3,19 @@ import Car from './Car'
 import React, { Component } from 'react';
 
 class Garage extends Component {
+  state = {
+    x : 10
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('======== -----------')
+    console.log(this.state.x)
+    console.log('garage componentDidUpdate')
+    console.log(prevState)
+    console.log(prevProps)
+    // will create a loop error!
+    // this.setState({x : this.state.x+1})
+  }
+
   render() {
     return (
       <div>
