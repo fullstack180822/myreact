@@ -1,6 +1,7 @@
 
 import Car from './Car'
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Garage extends Component {
   render() {
@@ -14,11 +15,35 @@ class Garage extends Component {
                      update={_car.update}
                      start_update={this.props.start_update}
                      finish_update={this.props.finish_update}
-                     delete_car = {this.props.delete_car}/>)
+                     delete_car = {this.props.remove_car}/>)
             }
       </div>
     );
   }
 }
 
-export default Garage;
+
+// get state from redux into props
+const mapStateToProps = (store_state, current_props) => {
+  console.log('============')
+  console.log(current_props);
+  console.log('============')
+  console.log('==== mapper state')
+  console.log(store_state.my_cars)
+  // returns the new props
+  return {
+    ...current_props,
+    cars: store_state.my_cars
+  } 
+}
+
+// dispatch action to redux
+const mapDispatchToProps = (dispatch) => {
+  return {
+    remove_car: id_ => dispatch({type:'remove_car', id_}),
+  } 
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Garage);
+

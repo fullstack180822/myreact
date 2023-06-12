@@ -4,7 +4,8 @@ const init_state ={
       {brand:"Ferrari", model:"Testa Rossa", color:"red", year: 2022, id: 2, update: false },
       {brand:"Chevrolet", model:"cavalier", color:"green" ,year: 2021, id: 3, update: true }
     ],
-    my_car_seq : 3
+    my_car_seq : 3,
+    filter_by_year: 0
   }
 
   const garageReducer = (state=init_state , action) => {
@@ -19,6 +20,21 @@ const init_state ={
         my_car_seq: new_seq + 1
       }
     }
+    else if (action.type === 'remove_car') {
+        // id_
+        const new_cars = state.my_cars.filter(car => car.id !== action.id_)
+        return {
+            ...state,
+            my_cars: new_cars
+        }
+      }
+    else if (action.type === 'update_filter') {
+        let new_seq = state.my_car_seq;
+        return {
+          ...state,
+          filter_by_year: action._year
+        }
+      }
     return state;
   }
 
