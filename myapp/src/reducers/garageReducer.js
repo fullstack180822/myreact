@@ -35,6 +35,25 @@ const init_state ={
           filter_by_year: action._year
         }
       }
+      else if (action.type === 'start_update') {
+        const updated_cars = state.my_cars.map(car => action._id == car.id ? 
+            {...car, update: true} : {...car, update: false} )
+        return {
+          ...state,
+          my_cars: updated_cars
+        }
+      }
+      else if (action.type === 'finish_update') {
+        const updated_cars = state.my_cars.map(car =>  action._id > 0 ?
+             {...car, update: false}:
+             {...car, update: false} )
+        return {
+          ...state,
+          my_cars: updated_cars
+        }
+      }
+
+
     return state;
   }
 

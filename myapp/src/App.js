@@ -37,18 +37,21 @@ class App extends Component {
       this.props.update_filter_by_year(year)
   }
   startUpdate = _id => {
-    const new_cars = this.state.my_cars.map(car => _id == car.id ? 
-      {...car, update: true} : {...car, update: false} )
-      this.setState({
-        my_cars: new_cars
-      })      
+    // const new_cars = this.state.my_cars.map(car => _id == car.id ? 
+    //   {...car, update: true} : {...car, update: false} )
+    //   this.setState({
+    //     my_cars: new_cars
+    //   })      
+      this.props.start_update(_id)
   }
   finishUpdate = _id => {
-    const new_cars = this.state.my_cars.map(car =>  _id > 0 ? {...car, update: false}:
-      {...car, update: false} )
-      this.setState({
-        my_cars: new_cars
-      })    
+    // const new_cars = this.state.my_cars.map(car =>  _id > 0 ? {...car, update: false}:
+    //   {...car, update: false} )
+    //   this.setState({
+    //     my_cars: new_cars
+    //   })    
+    this.props.finish_update(_id)
+
   }  
   render() {
     console.log('propssssssss');
@@ -96,7 +99,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     add_car: new_car => dispatch( {type:'add_car', new_car } ),
     remove_car: id_ => dispatch({type:'remove_car', id_}),
-    update_filter_by_year: _year => dispatch({type:'update_filter', _year})
+    update_filter_by_year: _year => dispatch({type:'update_filter', _year}),
+    start_update: _id => dispatch({type: 'start_update', _id}),
+    finish_update: _id => dispatch({type: 'finish_update', _id})
+
   } 
 }
 
