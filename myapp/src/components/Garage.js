@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 class Garage extends Component {
   render() {
+    console.log(this.props.filter_by_year);
     return (
       <div>
             {
