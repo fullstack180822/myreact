@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const  UseStateCounter = () => {
+const  UseStateCounter = ({useMyReducer}) => {
     const [count, setCount] = useState(0)
   
     function changeCount(amount) {
