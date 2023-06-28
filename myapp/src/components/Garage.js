@@ -33,7 +33,7 @@ const mapStateToProps = (store_state, current_props) => {
   // returns the new props
   return {
     ...current_props,
-    cars: store_state.my_cars
+    classes: store_state.my_cars
   } 
 }
 
