@@ -6,10 +6,14 @@ import React, {useState} from "react"
 import {ThemeProvider} from './ThemeContext'
 import { FunctionContextComponent } from './FunctionContextComponent';
 import { ReducerDemo} from './ReducerDemo';
+import {useLocalStorage} from './CustomHook'
+import useUpdateLogger from './CustomHook2'
 
 function App() {
 
-  const [theme, setTheme] = useState("dark")
+  const [name, setName] = useLocalStorage('name', '');
+
+  useUpdateLogger(name)
 
   return (
             <div className="App">
@@ -22,6 +26,9 @@ function App() {
                 </ThemeProvider>
                 <br /><br />
                 <ReducerDemo />
+                <br />
+                  <input type="text" value={name} 
+                  onChange={e => setName(e.target.value)} />
               </header>
             </div>
       )
