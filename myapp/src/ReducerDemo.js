@@ -43,7 +43,7 @@ const ReducerDemo = ( ) => {
       </button>
       <button onClick={() => dispatch({ type: ACTIONS.RESET })}>Reset</button>
       <br />
-      <ShareReducer dispatch={dispatch}/>
+      <ShareReducer dispatch={dispatch} ACTIONS={ACTIONS}/>
     </>
   )
 }
